@@ -1,5 +1,8 @@
 # HyperVLA
 
+This is the codebase of the paper [HyperVLA: Efficient Inference in Vision-Language-Action Models via Hypernetworks
+](https://arxiv.org/abs/2510.04898), which significantly accelerates VLA inference by generating compact task-specific policy network via hypernetworks.
+
 ## Installation
 Run `bash docker/simpler_cuda12/build_docker.sh` to install the docker environment
 
@@ -10,7 +13,7 @@ docker run --gpus '"device=xxx"' --rm --network host --ipc=host --user $(id -u) 
 ```
 
 ## Train
-Run the following command to train HyperVLA
+By default, we train HyperVLA on the Open X-Embodiment (OXE) dataset. Run the following command to train HyperVLA
 ```
 python -m scripts.train \
     --config scripts/configs/hypervla_pretrain_config.py:vit_t,oxe \
